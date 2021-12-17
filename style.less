@@ -1,0 +1,298 @@
+@font-face {
+    font-family: AvenirNext;
+    src: url("assets/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: AvenirNext;
+    font-weight: bold;
+    src: url("assets/AvenirNextLTPro-Bold.otf") format("opentype");
+}
+body{
+    font-family: AvenirNext;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    color: #33475b;
+}
+ul, li{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block !important;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+hr{
+    border-color:rgba(0, 0, 0, .05)
+}
+.container{
+    max-width: 960px;
+    padding: 1em;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;    
+    justify-content: space-between;
+    img{
+        display: block;
+    }
+}
+#top, #mainnav{
+    display: flex;    
+    justify-content: space-between;
+    font-size: .8em;
+    .container;
+    nav{
+        display: flex; 
+        gap: 2em; 
+    }
+    .secondary{
+        gap: 1em;
+    }
+}
+.icon{
+    width:16px;
+    vertical-align: sub;
+}
+@baseu: 0.25em;
+.mr-2{
+    margin-right: @baseu * 2;
+}
+.mr-4{
+    margin-right: @baseu * 4;
+}
+.button{
+    color: #fff;
+    background-color: #ff7a59;
+    text-decoration: none;
+    display: inline-block;
+    padding: .8em 2em;
+    border-radius: .2em;
+    text-align: center;
+    &:hover{
+        background-color: #d14a29;
+    }
+    &.block{
+        display: block;
+    }
+    &.inverted{
+        border: 1px solid #d14a29;
+        color: #d14a29;
+        background-color: #fff;
+    }
+}
+#mainnav{
+    font-size: 1em;
+    align-items: center;
+    .logo{
+        display: block;
+    }
+    padding: 2em 0;
+}
+#navigations{
+    box-shadow: 0 0px 6px rgba(0, 0, 0, .1);
+    //position: fixed;
+    width: 100%;
+    background: #fff;
+}
+#main-hero{
+    max-width: 960px;
+    padding: 0 1em;
+    margin: 0 auto;
+    display: flex;
+    img{
+        width: 50%;
+        z-index: -1;
+    }
+    .content{
+        padding: 1em 1em;
+        line-height: 1.6em;
+    }
+}
+.card{
+    background: #fff;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, .05);
+    padding: 1em 1em;
+    border-radius: .2em;
+    h3{
+        margin-bottom: 0;
+    }
+    p{
+        font-size: .9em;
+        line-height: 1.4em;
+    }
+
+}
+#products, #bythenumbers, #customers{
+    padding: 4em 0;
+    background-color: #f5f8fa;
+    .content{
+        h2{
+            margin-bottom: 2em;
+        }
+        p{
+            margin: 2em 0;
+            line-height: 1.6em;
+        }
+        .cta{
+            margin-bottom: 3em;
+        }
+    }
+}
+#product-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 2em;
+    grid-column-gap: 2em;    
+}
+.features{
+    li{
+        margin-bottom: 1em;
+        font-size: .8em;
+        &:before{
+            display: inline-block;
+            content: "";
+            background: url(https://cdn2.hubspot.net/hubfs/53/assets/hubspot.com/partners/images/Orange_Checkmark.svg) no-repeat;
+            width: 1.1em;
+            height: 1.1em;
+            margin-bottom: -0.25em;
+            margin-right: .5em;
+        }
+    }
+}
+#bythenumbers{
+    background-image: linear-gradient(45deg,#00a4bd,#00bda5);
+    color: #fff;    
+    .content{
+        margin-bottom: 4em;
+    }
+}
+@number-grid-column: 4;
+#number-grid{
+    display: grid;
+    grid-template-columns: repeat(@number-grid-column, 1fr);
+    .number-grid-el{
+        padding: 2em;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        img{
+            width: 4em;
+        }
+        h3{
+            font-size: 3em;
+            margin: .1em 0;
+            margin-top: .2em;
+        }
+        &:nth-child(4){
+            border-right: none;
+        }
+        &:nth-child(n+5){
+            border-bottom: none;
+        }
+        &:nth-child(8){
+            border-right: none;
+        }
+    }
+}
+#customers, #story{
+    background-color: #fff;
+    .content{
+        width: 40%;
+        h2{
+            font-size: 2em;
+            margin: 0;
+        }
+        p{
+            margin-top: 1em;
+        }
+    }
+}
+.logos{
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(@number-grid-column, 1fr);
+    .logocontainer{
+        padding: 1em;
+    }
+    img{
+        max-width: 100%;
+    }
+}
+#story{
+    .content{
+        width: auto;
+        padding: 4em 1em;
+        line-height: 1.6em;
+    }
+    img{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 420px) {
+    #navigations{
+        display: none;
+    }
+    #main-hero{
+        .content{
+            margin-bottom: 3em;
+        }
+        img{
+            display: none;
+        }
+    }
+    .cta{
+        .button{
+            display: block;
+            margin-right: 0 !important;
+            margin-bottom: 1em;
+        }
+    }
+    #product-grid{
+        display: block;
+        .card{
+            margin-bottom: 1em;
+        }
+    }
+    #number-grid{
+        grid-template-columns: 1fr 1fr;
+        .number-grid-el{
+            &:nth-child(even){
+                border-right: none;
+            }
+            &:nth-child(n+5){
+                border-bottom: 1px solid #fff;
+            }
+            &:nth-child(n+7){
+                border-bottom: none;
+            }
+            h3{
+                font-size: 2em;
+            }
+        }
+    }
+    #customers{
+        .flex{
+            display: block;
+            .content{
+                width: auto;
+            }
+            .logos{
+                width: auto;
+            }
+        }
+    }
+    #story{
+        img{
+            display: none;
+        }
+    }
+}
